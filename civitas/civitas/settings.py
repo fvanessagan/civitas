@@ -125,3 +125,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/home'
 LOGOUT_REDIRECT_URL = '/home'
+
+# settings.py
+
+import os
+
+OPENAI_API_KEY = os.getenv("sk-proj-2d34UGKiC9BJwTcyh6UhT3BlbkFJKVcKOzrRQ9RqoWE0NkAm")  # Ensure you set this environment variable
+
