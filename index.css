@@ -1,0 +1,87 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.btn{
+  cursor: pointer;
+  background-color: #FF9900;
+  color: white;
+  border-style: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 200px;
+}
+
+#navbar{
+  left: 0;
+  top: 0;
+  height: 88px;
+  background-color: #FF9900;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navbar-right {
+  font-size: 30px;
+  margin-left: 25px;
+  flex: 1;
+}
+
+#navbar-login, #navbar-signup {
+  margin-right: 25px;
+}
+
+#navbar-login, #navbar-signup {
+  margin-left: auto;
+}
+
+.login-signup, a{
+  font: bold;
+  font-size: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  flex-basis: 0;
+  flex-grow: 1;
+  margin-right: 10px;
+  color: white;
+}
+
+#home{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#review{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 325px;
+  width: 100%;
+  background-color: #FF9900;;
+  text-align: center;
+}
+
+#community{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 64px;
+  gap: 10px;
+}
+
+.communities{
+  background-color: white;
+  border-radius: 20px;
+}
