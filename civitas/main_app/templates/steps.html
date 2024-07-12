@@ -6,16 +6,14 @@
 
 {% if user.is_authenticated %}
 
-{% for val in lesson_list %}
-    <li>
-        {{val}}
-    </li> 
-
-</br>
-
+{% for lesson in lesson_list.all %}
+    <div class="box">
+        <a href="{{lesson.slug}}/" class="headings"><p class="box-list">{{lesson.subjects}}</p></a>
+        <p class="box-list">{{lesson.start_level}}</p>
+    </div>
 {% endfor %}
 
-    <a href="new/"><button>Add a new lesson</button></a>
+    <a href="new/"><button class="centerbtn" style="margin-top: 30px;">Add a new lesson</button></a>
 
 {% else %}
 

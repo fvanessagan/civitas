@@ -2,16 +2,21 @@
 
 {% block title %}{% endblock %}
 
-{% block content %}
-<div id='sign-up'>
-    <h1 id="welcome" class="signup">Welcome to Civitas!</h1>
+{% load crispy_forms_tags %}
 
-    <form method="POST">
+{% block content %}
+
+<h1 id="welcome" class="signup" style="margin-left:40px; margin-top: 15px;">Welcome to Civitas!</h1>
+
+<div id='sign-up' style="width:100%;">
+
+    <form method="POST" style="margin-left: 50px;">
         {% csrf_token %}
-        {{form}}
+        {{form|crispy}}
+
+        <p style="font-size: small;">Already have an account? <a href="/login" id="'redirect">Login here</a></p> 
         <button type="submit" id="sign-up-button">Sign Up</button>
     </form>
 
-<p>Already have an account? <a href="/login" id="'redirect">Login here</a></p>
 </div>
 {% endblock %}

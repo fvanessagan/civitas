@@ -6,13 +6,17 @@
 
 {% if user.is_authenticated %}
 
-<p>{{group.subject}}</p>
-<p>{{group.level}}</p>
+<p class="headings heading-group">{{group.subject}}</p>
+<p class="heading-group">{{group.level}}</p>
 
 <div id="chatspace">
+
     <div id="chatwindow"></div>
-      <input type="text" id="message-content" />
-      <button type="submit" id="message-send">Send</button>
+
+    <div id="newchat">
+      <input type="text" id="message-content"/>
+      <button type="submit" id="message-send" style="margin-top: 100px; width:100px;">Send</button>
+    </div>
 </div>
 
     <script>

@@ -7,21 +7,25 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width">
         <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+
+        <style>input {max-width: 15em}; select{width:15em}</style>
     </head>
 
     <body>
         <nav class="nav">
+            <h1 id="logo">Civitas.</h1>
             <ul class="nav-list"> 
 
-                <li><a href="/home">Home</a></li>
-                <li><a href="/learning-steps">Learning Steps</a></li>
-                <li><a href="/group">Group</a></li>
+                <li><a href="/home" class="nav-text">Home</a></li>
+                <li><a href="/learning-steps" class="nav-text">Learning Steps</a></li>
+                <li><a href="/group" class="nav-text">Group</a></li>
 
                 {% if user.is_authenticated %}
-                <li><a href="/account">Account</a></li>
+                <li><a href="/account" class="nav-text">Account</a></li>
                 {% else %}
-                <li><a href="/sign-up">Sign Up</a>/<a href="/login">Login</a></li>
+                <li><a href="/sign-up" class="nav-text">Sign Up</a>/<a href="/login" class="nav-text">Login</a></li>
                 {% endif %}
 
             </ul>

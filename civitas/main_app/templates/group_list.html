@@ -7,9 +7,9 @@
 {% if user.is_authenticated %}
 
 {% for grp in grouplist.all %}
-    <div>
-        <a href="{{grp.slug}}/"><p>{{grp.subject}}</p></a>
-        <p>{{grp.start_level}}</p>
+    <div class="box">
+        <a href="{{grp.slug}}/" class="headings"><p class="box-list">{{grp.subject}}</p></a>
+        <p class="box-list">{{grp.start_level}}</p>
     </div>
 {% endfor %}
 
