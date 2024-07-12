@@ -4,6 +4,47 @@ from django.contrib.auth.models import User
 from .signup_form import SignUpForm
 from .forms import addLesson
 from .models import Lessons
+import openai
+from django.conf import settings
+from .forms import LearningRoadmapForm
+
+openai.api_key = settings.OPENAI_API_KEY
+
+def generate_roadmap(request):
+    if request.method == 'POST':
+        form = LearningRoadmapForm(request.POST)
+        if form.is_valid():
+            subjects = form.cleaned_data['subjects']
+            goals = form.cleaned_data['goals']
+            reasons = form.cleaned_data['reasons']
+            start_level = form.cleaned_data['start_level']
+            strengths = form.cleaned_data['strengths']
+            weaknesses = form.cleaned_data['weaknesses']
+
+            prompt = (
+                "You are an AI that will help people learn. You will generate a roadmap based on the topic the user wants to learn. "
+                "First, you will ask what subjects the user wants to learn. After that, you will ask what goal the user wants to achieve and their reason for learning it. "
+                "Then, you will ask about the user's start level (total beginner, beginner, intermediate, advanced, expert), and if they are not a total beginner, provide examples of things they might have mastered at their level. "
+                "Finally, you will ask what are their strengths and weaknesses. "
+                f"Subjects: {subjects}\nGoals: {goals}\nReasons: {reasons}\nStart Level: {start_level}\nStrengths: {strengths}\nWeaknesses: {weaknesses}"
+            )
+
+            response = openai.Completion.create(
+                engine="text-davinci-003",
+                prompt=prompt,
+                max_tokens=1000
+            )
+
+            roadmap = response.choices[0].text.strip()
+            return render(request, 'roadmap.html', {'roadmap': roadmap})
+
+    else:
+        form = LearningRoadmapForm()
+
+    return render(request, 'learning_form.html', {'form': form})
+
+
+
 
 # Create your views here.
 
