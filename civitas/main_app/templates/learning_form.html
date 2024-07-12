@@ -1,0 +1,16 @@
+<!-- learning_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning Roadmap</title>
+</head>
+<body>
+    <h1>Generate Your Learning Roadmap</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Generate Roadmap</button>
+    </form>
+</body>
+</html>
