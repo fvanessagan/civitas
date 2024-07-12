@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Account{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<!--Profile Picture | tap to change -->
+<!--Username Info-->
+
+<!--Log Out-->
+    <form action="{% url 'logout' %}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Log Out</button>
+    </form>
+
+{% else %}
+
+    <p>Please <a href="/sign-up">Sign Up</a> or <a href="/login">Login</a></p>
+
+{% endif %}
+
+{% endblock %}

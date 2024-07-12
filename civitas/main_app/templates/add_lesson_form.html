@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Add New Lesson{% endblock %}
+
+{% block content %}
+<form method="POST" action="{% url 'add-lesson' %}" enctype="multipart/form-data">
+    
+    {% csrf_token %}
+    {{form}}
+
+    <button>Submit</button>
+</form>
+
+{% endblock %}

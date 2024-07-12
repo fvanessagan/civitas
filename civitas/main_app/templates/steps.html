@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Learning Steps{% endblock %}
+
+{% block content %}
+
+{% for val in lesson_list %}
+    <li>
+        {{val}}
+    </li> 
+
+</br>
+
+{% endfor %}
+
+    <a href="new/"><button>Add a new lesson</button></a>
+{% endblock %}
