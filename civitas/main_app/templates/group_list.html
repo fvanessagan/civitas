@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+{% for grp in grouplist.all %}
+    <div>
+        <a href="{{grp.slug}}/"><p>{{grp.subject}}</p></a>
+        <p>{{grp.start_level}}</p>
+    </div>
+{% endfor %}
+
+{% else %}
+
+    <p>Please <a href="/sign-up">Sign Up</a> or <a href="/login">Login</a></p>
+
+{% endif %}
+
+{% endblock %}

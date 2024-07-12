@@ -1,14 +1,17 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html>
     <head>
+        
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width">
         <title>{% block title %}{% endblock %}</title>
-        <link rel="stylesheet" href="D:/Garuda Hacks/Civitas_project/civitas/main_app/static/style.css"/>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
     </head>
 
     <body>
-
-        <nav>
+        <nav class="nav">
             <ul class="nav-list"> 
 
                 <li><a href="/home">Home</a></li>

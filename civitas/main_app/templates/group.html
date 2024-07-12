@@ -4,4 +4,42 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+
+<p>{{group.subject}}</p>
+<p>{{group.level}}</p>
+
+<div id="chatspace">
+    <div id="chatwindow"></div>
+      <input type="text" id="message-content" />
+      <button type="submit" id="message-send">Send</button>
+</div>
+
+    <script>
+      const groupSocket = new WebSocket("ws://" + window.location.host + "/");
+      document.querySelector("#message-content").focus();
+
+      document.querySelector("#message-send").onclick = function (e) 
+      {
+        var content = document.querySelector("#message-content").value;
+        groupSocket.send(JSON.stringify({ message_cont: content, user : "{{request.user.username}}"}));
+      };
+
+      groupSocket.onmessage = function (e) {
+        const data = JSON.parse(e.data);
+
+        var chat = document.createElement("p");
+        chat.innerHTML = data.user + " : " + data.message_cont;
+
+        document.querySelector("#message-content").value = "";
+        document.querySelector("#chatwindow").appendChild(chat);
+
+      };
+    </script>
+
+{% else %}
+
+    <p>Please <a href="/sign-up">Sign Up</a> or <a href="/login">Login</a></p>
+
+{% endif %}
 {% endblock %}

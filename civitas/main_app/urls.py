@@ -10,5 +10,6 @@ urlpatterns = [
 
     path("learning-steps/", views.steps),
     path("learning-steps/new/", views.newlesson, name="add-lesson"),
-    path("group/", views.group),
+    path("group/", views.group_list),
+    path("group/<slug:slug>/", views.group, name="group")
 ]

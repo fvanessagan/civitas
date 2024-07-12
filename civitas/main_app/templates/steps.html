@@ -4,6 +4,8 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
+
 {% for val in lesson_list %}
     <li>
         {{val}}
@@ -14,4 +16,11 @@
 {% endfor %}
 
     <a href="new/"><button>Add a new lesson</button></a>
+
+{% else %}
+
+    <p>Please <a href="/sign-up">Sign Up</a> or <a href="/login">Login</a></p>
+
+{% endif %}
+
 {% endblock %}
