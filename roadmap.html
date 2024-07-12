@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Roadmap</title>
+  <link href="roadmap.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="roadmap" class="roadmap">
+    <h1 id="welcome" class="roadmap">Let's make your roadmap!</h1>
+    <form class="roadmap">
+        <label for="topic" class="form-text flex-column">What topic did you want to learn?</label>
+        <input type="text" id="topic" name="topic" class="input flex-column" required><br>
+        <label for="goal" class="form-text flex-column">What's your goal?</label>
+        <input type="text" id="goal" name="goal" class="input flex-column" required><br>
+        <label for="reason" class="form-text flex-column">What's your reason?</label>
+        <input type="text" id="reason" name="reason" class="input flex-column" required><br>
+        <label for="level" class="form-text flex-column">What's your level?</label>
+        <select name="levels">
+          <option value="tbeg" class="input flex-column">Totally Beginner</option>
+          <option value="beg" class="input flex-column">Beginner</option>
+          <option value="int" class="input flex-column">Intermediate</option>
+          <option value="adv" class="input flex-column">Advance</option>
+          <option value="exp" class="input flex-column">Expert</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit" class="btn">
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

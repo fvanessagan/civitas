@@ -1,0 +1,62 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: #FF9900;
+}
+
+#welcome {
+    margin-bottom: 90px;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: #FF9900;
+    color: white;
+    border-style: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 200px;
+}
+
+.form-text {
+    display: flex;
+    justify-content: flex-start; /* Changed from left to flex-start */
+    align-items: flex-start;     /* Changed from left to flex-start */
+    text-align: left;
+    width: 100%; /* Ensures the element takes full width of its container */
+    margin-bottom: 5px;
+}
+
+.input {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border-width: thin;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 10px;
+}
+
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    height: 600px;
+    box-shadow: 0px 5px 10px grey;
+    border-radius: 20px;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
